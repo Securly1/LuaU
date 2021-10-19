@@ -51,4 +51,10 @@ end)
 
 RunService.RenderStepped:Connect(function()
     ViewModel:SetPrimaryPartCFrame(Camera.CFrame)
+        
+     for i, instances in pairs(Character:GetChildren())
+        if instances:IsA("BasePart") then
+           instances.LocalTransparency = 0 
+        end
+     end
 end)
