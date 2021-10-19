@@ -47,6 +47,9 @@ Mouse.MouseButton1Down:Connect(function()
     end
 end)
 
+USerInputService.InputBegan:Connect(function()
+    
+end)
 
 
 RunService.RenderStepped:Connect(function()
