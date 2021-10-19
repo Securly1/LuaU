@@ -18,12 +18,14 @@ local Range = 1000
 local IsFollowing = nil
 local CanFire = true
 local IsReloading = false
+local CanRe = true
 
 local ShootingAnim = "AnimId"
 
 Mouse.MouseButton1Down:Connect(function()
-    if CanFire and not ISReloading then
+    if CanFire and not IsReloading then
         CanFire = false
+        CanRe = false
         local NewAnimShoot = Instance.New("Animation")
         NewAnimShoot.AnimationId = ShootingAnim
         NewAnimShoot.Parent = Character:FindFirstChild("Animations")
@@ -52,7 +54,8 @@ USerInputService.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.R then
         if not IsReloading then
             CanFire = false
-                
+            CanRe = false
+            
         end
     end
 end)
