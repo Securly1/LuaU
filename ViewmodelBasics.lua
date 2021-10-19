@@ -34,6 +34,12 @@ Mouse.MouseButton1Down:Connect(function()
             LoadAnimShoot:Play()
             
             local RayCast = workspace:RayCast(Camera.CFrame, Camera.CFrame.LookVector * Range, RaycastParameters.New())
+                
+            if RayCast and RayCast.Instance.Parent:FindFirstChildOfClass("Humanoid") then
+                local HitHum = RayCast.Instance.Parent:FindFirstChildOfClass("Humanoid")
+                    
+                DD:FireSever(HitHum)
+            end
             LoadAnimShoot.Stopped:Wait()
             CanFire = true
             
