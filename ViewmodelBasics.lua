@@ -21,6 +21,7 @@ local IsReloading = false
 local CanRe = true
 
 local ShootingAnim = "AnimId"
+local ReAnim = "AnimId"
 
 Mouse.MouseButton1Down:Connect(function()
     if CanFire and not IsReloading then
@@ -53,9 +54,14 @@ end)
 USerInputService.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.R then
         if not IsReloading then
+            local NewR = Instance.New("Animation")
+            NewR.AnimationId = ReAnim
+            NewR.Parent = Character:FindFirstChild("Animations")
+                
             CanFire = false
             CanRe = false
-            
+            LoadR = Character:WaitForChild("Humanoid"):LoadAnimation(NewR)
+             
         end
     end
 end)
