@@ -1,8 +1,9 @@
-local Lib = {}
+local Libray = {}
 
-Lib:AddButon(Title, func)
-    ButtonItem.Text = Title
-    Button.MouseButton1Down:Connect(func)
+Library:AddUI(Title, function()
+        
 end
-  
-return Lib
+
+
+
+return Library
