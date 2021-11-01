@@ -50,7 +50,7 @@ end
 local troll = {}
 local troll2 = {getRandomString(100, true), getRandomString(100, true), getRandomString(100, true), getRandomString(100, true), getRandomString(100, true), getRandomString(100, true)}
 
-for i = 1, 1000, do
+for i = 1, 1000 do
     table.insert(troll, troll2)
 end
 
